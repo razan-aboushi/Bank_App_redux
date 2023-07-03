@@ -36,3 +36,44 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+
+
+
+
+
+.accounts-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.accounts-table th,
+.accounts-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.accounts-table th {
+  background-color: #f2f2f2;
+}
+
+.delete-button {
+  background-color: #f44336;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.delete-button:hover {
+  background-color: #d32f2f;
+}
+
+/* Add additional styles or animations as desired */

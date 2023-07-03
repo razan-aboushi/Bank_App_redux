@@ -1,40 +1,20 @@
-import { createStore } from 'redux';
+import { configureStore } from '@reduxjs/toolkit';
+import rootReducer from "../reducers";
 
-const initState = {
-    accounts: [
-        {
-            id: 1,
-            customerName: "Israa Othman",
-            accountNumber: "123456",
-            accountType: "Savings"
-        },
-        {
-            id: 2,
-            customerName: "Ahmad Zahran",
-            accountNumber: "987654",
-            accountType: "Student accounts"
-        },
-        {
-            id: 3,
-            customerName: "Razan Aboushi",
-            accountNumber: "567890",
-            accountType: "Checking"
-        },
-        {
-            id: 4,
-            customerName: "Shoq Roz",
-            accountNumber: "098765",
-            accountType: "Investment"
-        }
-    ]
-};
+// Load the state from localStorage
+const persistedState = localStorage.getItem('reduxState')
+  ? JSON.parse(localStorage.getItem('reduxState'))
+  : {};
 
+// Create the store with the persisted state
+const store = configureStore({
+  reducer: rootReducer,
+  preloadedState: persistedState,
+});
 
-const reducer = (state = initState, action) => {
-    // Handle actions here
-    return state;
-};
-
-const store = createStore(reducer);
+// Save the state to localStorage whenever it changes
+store.subscribe(() => {
+  localStorage.setItem('reduxState', JSON.stringify(store.getState()));
+});
 
 export default store;
