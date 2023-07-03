@@ -16,13 +16,13 @@ const initState = {
         },
         {
             id: 3,
-            customerName: "John Doe",
+            customerName: "Razan Aboushi",
             accountNumber: "567890",
             accountType: "Checking"
         },
         {
             id: 4,
-            customerName: "Jane Smith",
+            customerName: "Shoq Roz",
             accountNumber: "098765",
             accountType: "Investment"
         }
